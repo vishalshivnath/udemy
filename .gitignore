@@ -1,0 +1,11 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore out folder
+out/
+
+# Ignore all xml files
+*.xml
+
+# ignore file
+udemy.iml
