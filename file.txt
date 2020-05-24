@@ -1,0 +1,7 @@
+Functional Programming was introduced into Java in Java 8. Additional Functional Programming Enhancements were introduced in Java 9.
+
+In this handson course, we will learn to write awesome Java code with Functional Programming. You will learn the basics of Functional Programming - Lambda Expressions, Method References, Streams and Functional Interfaces.
+
+This course would be a perfect first step as an introduction to Functional Programming.
+
+You will be using using Eclipse (Java IDE) and Java 9 in this course. We will help you set up each one of these.
