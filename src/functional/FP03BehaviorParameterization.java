@@ -1,4 +1,4 @@
-package programming;
+package functional;
 
 import java.util.List;
 import java.util.function.Function;

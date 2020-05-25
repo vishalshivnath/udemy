@@ -1,7 +1,6 @@
-package programming;
+package functional;
 
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.LongStream;
 
 public class FP07ParallelProgramming {

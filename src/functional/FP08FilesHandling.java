@@ -1,4 +1,4 @@
-package programming;
+package functional;
 
 import java.io.IOException;
 import java.nio.file.Files;

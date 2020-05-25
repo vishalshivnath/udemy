@@ -1,8 +1,7 @@
-package programming;
+package functional;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 public class FP06HigherOrderFunctions {
 

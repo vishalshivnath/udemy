@@ -1,4 +1,4 @@
-package programming;
+package functional;
 
 public class FP09Threads {
     public static void main(String[] args) {

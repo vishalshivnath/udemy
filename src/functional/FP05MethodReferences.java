@@ -1,7 +1,6 @@
-package programming;
+package functional;
 
 import java.util.List;
-import java.util.Random;
 import java.util.function.*;
 
 public class FP05MethodReferences {
