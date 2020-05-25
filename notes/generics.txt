@@ -1,0 +1,10 @@
+1.Generics can reduce runtime bugs to compile time bugs
+
+Add stability to the code by making more of your bugs detectable at compile time
+
+Stronger type checks at compile time
+
+2.We can eliminate casting
+
+3.We can implement generic algorithms like sorting,search
+
