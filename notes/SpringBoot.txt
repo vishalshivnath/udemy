@@ -1,0 +1,15 @@
+1.Master Java Webservices and Restful API with spring boot
+
+2.https://github.com/in28minutes/spring-microservices
+
+3.WS
+Designed for machine to machine interaction
+Not platform dependent
+Should allow communication over a network
+
+4.HOW
+Service Definition
+    1.Request/Response format (XML/JSON/Any other format)
+    2.Request structure (format of structure of request)
+    3.Response structure (format of structure of response)
+    4.End point
