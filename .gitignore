@@ -18,3 +18,4 @@ udemy.iml
 .project
 .classpath
 .settings/org.eclipse.jdt.core.prefs
+.settings/org.jboss.ide.eclipse.as.core.prefs
