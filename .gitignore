@@ -14,3 +14,7 @@ udemy.iml
 
 #ignore all class files
 *.class
+
+.project
+.classpath
+.settings/org.eclipse.jdt.core.prefs
