@@ -8,3 +8,80 @@ Stronger type checks at compile time
 
 3.We can implement generic algorithms like sorting,search
 
+4.Generic methods and type inference enables us to invoke a generic method as it would be ordinary method,
+without specifying a type between diamond operators
+because of type inference we can invoke like this
+List<String> L1=new ArrayList<>();
+
+5.Collection of objects is not a supertype of all types of collections
+The supertype of all types of collections is wildcard
+
+print(Collection<?> c)
+for i in c
+print i
+
+also add(new Object()) will cause compile time error
+We cannot modify this
+This is unbounded wilcard
+
+6.UPPER BOUNDED WILDCARDS
+"? extends T"
+
+Its applicable to subclasses
+Like Shape is upper bound of wildcard. We can print but we cannot add for example Circle
+
+add(new Circle()) will give compile time error.We can read but we cannot write/add item because
+? extends Shape is unknown subtype of Shape
+Compiler doesnt know whether its Circle or Rectangle
+List <? extends Number > N=new ArrayList<Integer>();
+List <? extends Number > N=new ArrayList<Double>();
+
+All subclasses are valid here
+
+You can read only list <number> but cannot read list <Double> because it may be List<Integer> or List<Number> as well
+
+7.LOWER BOUNDED WILDCARDS
+"? super T"x
+
+You can specify the lower bound or upper bounds but you cannot specify both
+If you use "? super Integer" -> You can use any super type of integer so Number or Object as well
+
+List <? super Integer> l=new ArrayList<Integer>();
+List <? super Integer> l=new ArrayList<Object>();
+List <? super Integer> l=new ArrayList<Number>();
+
+Reading is not guaranted an Integer because it may be pointing to a Number
+The only gurantee is an Object or a Subclass of Object -You can cast to Object
+
+Writing You can add Object or Serializable to a List<? super Number> even though
+Number extends Object and Serializable
+You can add Integer or Double or .. but you List<Double> would be too restrictive
+
+
+8.Producer extends and Consumer super principle
+
+  producer extends -> if we want to read from the list we have to declare with it extends
+  List <? extends T> we can read T values but we cannot add values to T
+
+  consumer super-> if we hage to add values to the list we have to declare with super
+  List<? super T> we can add T values but we cannot read fron this list because we dont know the type
+
+  If we want to add AND read at the same time we have to declare collections with no wildcards
+  For example List<Double> we can add and read Doubles
+
+9.Type Erasure
+In order to implement generics in Java , Java uses type erase type
+Replace all type parameters in generics types with their bounds if bounded or Object if unbounded
+If these type parameters are unbounded so the final bytecode will contain please Java Objects/Classes
+Uses type caste if necessary
+Sometimes it generates extra methods the so called Bridge methods in order to maintain Polymorphism with generics types
+
+In the Bytecode following code is equivalent
+List<Integer> list=new ArrayList<>()
+list.add(3);
+Integer num=list.get(3);
+----------
+List list=new ArrayList<>()
+list.add(3);
+Integer num=(Integer)list.get(3);
+

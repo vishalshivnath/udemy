@@ -1,0 +1,8 @@
+1.Reflection is language ability to inspect and dynamically call classes,methods and attributes
+getClasses()  we can get the classes we dont know at the compile time
+
+2.Framework that uses reflections Junit,Hibernate,JPI
+annotations
+
+Junit -> will look through your classes for methods tagged with @Test annotation
+-> will then call them when running the unit test
