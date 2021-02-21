@@ -13,3 +13,79 @@ Service Definition
     2.Request structure (format of structure of request)
     3.Response structure (format of structure of response)
     4.End point
+
+5.Tansport - http/mq
+
+6.SOAP
+Format
+    SOAP XML REQUEST AND SOAP XML RESPONSE
+    SOAP ENVELOPE-HEADER AND BODY
+
+Transport
+    SOAP over MQ
+    SOAP over HTTP
+
+Service Definition
+    WSDL-Web service definition language
+
+WSDL defines
+End points
+All Operations
+Request structure
+Response structure
+
+7.REST-Representational state transfer
+Over Http
+
+Browser server request response
+Header Body in request
+
+HTTP REQUEST
+Http defines request methods
+GET,POST,PUT,DELETE
+
+HTTP RESPONSE
+HTTP response status code
+200,400,500 LIKE THAT
+
+Resource has an URI
+
+REST
+Data exchange format. No restriction .JSON is popular
+Transport only http
+Service definition No extension. WADL,Swagger
+
+8.REST VA SOAP
+
+TRANSPORT-HTTP/HTTP,MQ
+EASE OF IMPLEMENTATION-EASY /DIFFICULT
+SERVICE DEFINITION-WADL,SWAGGER/WSDL
+DATA EXCHANGE FORMAT-ANY,JSON/XML
+ARCHITECHTURAL APPROACH VS RESTRICTIONS
+
+
+9.What are the beans by @Component
+
+What are the dependencies of the beans @Automwired
+Where to search for the beans
+
+10.Tutorials
+https://www.springboottutorial.com/
+
+11.Initializer
+https://start.spring.io/
+
+12.Spring vs Spring boot vs Spring MVC
+Spring framework feature is dependency injection.At the core of all spring modules is dependency injection or IOC inversion of control.When DI or IOC is properly
+used we can develop loosely coupled applications.Loosely coupled applications can be easily unit tested.
+Solves duplication/plumbling code
+Good integration with other framework.Junit,Mokito
+
+Spring MVC provides simple way of developing web applications.With simple concepts like dispatcher
+
+
+Spring boot auto configuration.Spring boot started projects,build around well known patterns.
+provides starters,monitors.
+
+13.REST API
+https://github.com/in28minutes/spring-web-services/blob/master/restful-web-services/2.3.1.RELEASE-upgrade.md

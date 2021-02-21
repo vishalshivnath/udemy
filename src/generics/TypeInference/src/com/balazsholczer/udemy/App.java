@@ -1,4 +1,4 @@
-package com.balazsholczer.udemy;
+package generics.TypeInference.src.com.balazsholczer.udemy;
 
 import java.util.ArrayList;
 import java.util.List;

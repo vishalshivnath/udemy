@@ -1,0 +1,18 @@
+https://github.com/in28minutes/spring-web-services/tree/master/restful-web-services
+
+https://github.com/in28minutes/spring-web-services/blob/master/restful-web-services/2.3.1.RELEASE-upgrade.md
+
+1.Key representation is resource
+a resource has an URI (uniform resource identifier)
+/users
+/users/v1
+
+a resource can have different representations
+XML
+HTML
+JSON
+
+POST
+DEL
+PUT
+GET

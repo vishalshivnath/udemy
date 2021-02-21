@@ -1,4 +1,4 @@
-package com.balazsholczer.udemy;
+package generics.BridgeMethods.src.com.balazsholczer.udemy;
 
 public class App {
 
@@ -8,76 +8,80 @@ public class App {
 	 * 			ambiguous situations !!!
 	 * 
 	 */
+
+	public static void main(String[] args) {
+		System.out.println("hello");
+	}
 }
 
 // ------------- BEFORE TYPE ERASURE ----------------
 
-//class Node<T> {
-//	
-//	private T data;
-//	
-//	public Node(T data) {
-//		this.data = data;
-//	}
-//
-//	public void setData(T data) {
-//		this.data = data;
-//	}
-//}
-//
-//class MyNode extends Node<Integer> {
-//	
-//	public MyNode(Integer data) {
-//		super(data);
-//	}
-//	
-//	public void setData(Integer data) {
-//		super.setData(data);
-//	}
-//}
+class Node1<T> {
 
-// --------------------  AFTER TYPE ERASURE -----------------
+	private T data;
 
-//class Node {
-//	
-//	private Object data;
-//	
-//	public Node(Object data) {
-//		this.data = data;
-//	}
-//
-//	public void setData(Object data) {
-//		this.data = data;
-//	}
-//}
-//
-//class MyNode extends Node {
-//	
-//	public MyNode(Integer data) {
-//		super(data);
-//	}
-//	
-//	public void setData(Integer data) {
-//		super.setData(data);
-//	}
-//}
+	public Node1(T data) {
+		this.data = data;
+	}
 
-// -------------------------------------------------------------
+	public void setData(T data) {
+		this.data = data;
+	}
+}
 
-// as you can see after type erasure there is a problem:  the setData() method arguments do not match
-//		Java compiler is going to create a method in order to solve this problem --> this is the bridge method
+class MyNode1 extends Node1<Integer> {
 
-//class MyNode extends Node {
-//
-//	public MyNode(Integer data) {
-//		super(data);
-//	}
-//
-//	public void setData(Object o) {
-//		setData((Integer) o);						<----- THIS IS THE BRIDGE METHOD !!!
-//	}
-//
-//	public void setData(Integer data) {
-//		super.setData(data);
-//	}
-//}
+	public MyNode1(Integer data) {
+		super(data);
+	}
+
+	public void setData(Integer data) {
+		super.setData(data);
+	}
+}
+
+ //--------------------  AFTER TYPE ERASURE -----------------
+
+class Node {
+
+	private Object data;
+
+	public Node(Object data) {
+		this.data = data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+}
+
+class MyNode extends Node {
+
+	public MyNode(Integer data) {
+		super(data);
+	}
+
+	public void setData(Integer data) {
+		super.setData(data);
+	}
+}
+
+ //-------------------------------------------------------------
+
+ /*as you can see after type erasure there is a problem:  the setData() method arguments do not match
+		Java compiler is going to create a method in order to solve this problem --> this is the bridge method
+*/
+class MyNode2 extends Node {
+
+	public MyNode2(Integer data) {
+		super(data);
+	}
+
+	public void setData(Object o) {
+		setData((Integer) o);					//	<----- THIS IS THE BRIDGE METHOD !!!
+	}
+
+	public void setData(Integer data) {
+		super.setData(data);
+	}
+}

@@ -1,4 +1,4 @@
-package com.balazsholczer.udemy;
+package generics.Lecture3.src.com.balazsholczer.udemy;
 
 import java.nio.channels.ShutdownChannelGroupException;
 import java.util.ArrayList;

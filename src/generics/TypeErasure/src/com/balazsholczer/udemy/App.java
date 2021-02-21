@@ -1,4 +1,4 @@
-package com.balazsholczer.udemy;
+package generics.TypeErasure.src.com.balazsholczer.udemy;
 
 import java.io.Serializable;
 import java.nio.file.FileStore;

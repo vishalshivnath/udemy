@@ -1,4 +1,4 @@
-package com.balazsholczer.udemy;
+package generics.BoundedTypeParametersI.src.com.balazsholczer.udemy;
 
 public class App {
 
