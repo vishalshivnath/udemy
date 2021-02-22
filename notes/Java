@@ -56,3 +56,10 @@ H.
 https://www.baeldung.com/java-8-new-features
 
 https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+\\Note that a lambda expression looks a lot like a method declaration; you can consider lambda expressions as anonymous methods—methods without a name.
+
+http://tutorials.jenkov.com/java-functional-programming/streams.html
+
+https://www.journaldev.com/2774/java-8-stream
+
+https://www.journaldev.com/2763/java-8-functional-interfaces

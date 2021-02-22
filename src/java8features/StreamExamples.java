@@ -4,6 +4,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -117,6 +118,53 @@ public class StreamExamples {
     Optional<String> stringOptional=Optional.ofNullable(value);
     stringOptional.orElseThrow(new Exception()).toUpperCase();*/
 
+    List<String> stringList = new ArrayList<String>();
+
+    stringList.add("ONE");
+    stringList.add("TWO");
+    stringList.add("THREE");
+
+    Stream<String> streamone = stringList.stream();
+
+    long count = streamone
+        .map((value) ->  value.toLowerCase())
+        .count();
+
+    System.out.println("count = " + count);
+
+
+    List<String> stringList2 = new ArrayList<String>();
+
+    stringList2.add("One flew over the cuckoo's nest");
+    stringList2.add("To kill a muckingbird");
+    stringList2.add("Gone with the wind");
+
+    Stream<String> streamString = stringList2.stream();
+
+    streamString.flatMap((value) -> {
+      String[] split = value.split(" ");
+      return (Stream<String>) Arrays.asList(split).stream();
+    })
+        .forEach((value) -> System.out.println(value))
+    ;
+
+    ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+    myNumbers.add(10);
+    myNumbers.add(15);
+    myNumbers.add(20);
+    myNumbers.add(25);
+
+    System.out.println(myNumbers.stream().filter(n->n>15).mapToInt(i->i).sum());
+
+    Stream<List<String>> namesOriginalList = Stream.of(
+        Arrays.asList("Pankaj"),
+        Arrays.asList("David", "Lisa"),
+        Arrays.asList("Amit"));
+    //flat the stream from List<String> to String stream
+    Stream<String> flatStream = namesOriginalList
+        .flatMap(strList -> strList.stream());
+
+    flatStream.forEach(System.out::println);
   }
 
   public Stream<String> streamOf(List<String> list) {
