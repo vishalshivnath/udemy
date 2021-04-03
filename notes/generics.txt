@@ -85,3 +85,18 @@ List list=new ArrayList<>()
 list.add(3);
 Integer num=(Integer)list.get(3);
 
+
+
+12.1) Why do we use Generics in Java?
+Generics provide strong compile-time type checking and reduces risk of ClassCastException and explicit casting of objects.
+
+12.2) What is T in Generics?
+We use <T> to create a generic class, interface, and method. The T is replaced with the actual type when we use it.
+
+12.3) How does Generics work in Java?
+Generic code ensures type safety. The compiler uses type-erasure to remove all type parameters at the compile time to reduce the overload at runtime.
+
+13. Generics in Java – Further Readings
+Generics doesn’t support sub-typing, so List<Number> numbers = new ArrayList<Integer>(); will not compile, learn why generics doesn’t support sub-typing.
+We can’t create generic array, so List<Integer>[] array = new ArrayList<Integer>[10] will not compile, read why we can’t create generic array?.
+That’s all for generics in java, java generics is a really vast topic and requires a lot of time to understand and use it effectively. This post here is an attempt to provide basic details of generics and how can we use it to extend our program with type-safety.

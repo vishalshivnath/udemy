@@ -4,6 +4,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -165,9 +166,65 @@ public class StreamExamples {
         .flatMap(strList -> strList.stream());
 
     flatStream.forEach(System.out::println);
+
+
+    //1: To collect only even numbers from the array list
+    List<Integer> integerList=new ArrayList<>();
+    for (int i=0;i<10;i++) {
+      integerList.add(i);
+    }
+
+    List<Integer> list1=integerList.stream().filter(i->i%2==0).collect(Collectors.toList());
+    System.out.println("display elements-> "+list1);
+
+
+    //2.count method
+    long getStreamCount=integerList.stream().filter(i->i%2==0).count();
+    System.out.println("get array elements count-> "+getStreamCount);
+
+    //3.sorting method
+    List<Integer> list2=integerList.stream().sorted().collect(Collectors.toList());
+    System.out.println("display elements of sorted list-> "+list2);
+
+    //4.custom sorting method
+    List<Integer> list3=integerList.stream().sorted((a,b)->b.compareTo(a)).collect(Collectors.toList());
+    System.out.println("display elements of custom sorted list-> "+list3);
+
+
+    //5.min method
+    int minvalue=integerList.stream().min((a,b)->a.compareTo(b)).get();
+    System.out.println("display min value-> "+minvalue);
+
+    //6.max method
+    int maxvalue=integerList.stream().max((a,b)->a.compareTo(b)).get();
+    System.out.println("display max value-> "+maxvalue);
+
+    //7.forEach method
+    integerList.stream().forEach(System.out::println);
+
+    //8.toArray method
+    Integer[] integer=integerList.stream().toArray(Integer[]::new);
+    System.out.println("Integer array->"+integer.toString());
+
+    //9.Stream.of method
+    Stream s=Stream.of(1,3,6,4,10,6,7,5);
+    s.forEach(System.out::println);
+
+    Double[] d1={10.0,10.1,10.2,10.3};
+    Stream.of(d1).forEach(System.out::println);
+
+    //10.zone
+    ZoneId zone = ZoneId.systemDefault();
+    System.out.println(zone);
+
+    //11.# write a program to check the given year is leap year or not
+
   }
 
   public Stream<String> streamOf(List<String> list) {
     return list == null || list.isEmpty() ? Stream.empty() : list.stream();
   }
+
+
+
 }
